@@ -1,4 +1,4 @@
- """
+'''
  采用面向对象的编程思想，完成教务管理系统的开发。教务管理系统可以管理在校学生的成绩信息，通过控制台菜单与用户交互，具体的功能如下:
 1.添加学生成绩:根据输入的学生姓名、语文成绩、数学成绩、英语成绩，记录在系统中
     1.1输入学生姓名、语文成绩、数学成绩、英语成绩
@@ -15,7 +15,7 @@
     4.1输出格式为:“姓名:张三|语文:85数学:90|英语:88|总分:263"
 5.展示全部学生成绩:
 :展示出系统中所有学生的成绩
- """
+'''
 #学生类
 class Student:
     def __init__(self,name,chinese,math,english):
@@ -34,4 +34,25 @@ class Student:
             self.math = math
         if english is not None:
             self.english = english
+
+#测试
+if __name__=="__main__":
+    s1 = Student("王林",90,88,92)
+    print(s1)
+    s1.update_score(english=95)
+    print(s1)
+
+#教务管理系统
+class EduManagement :
+    system_version = "1.0"
+    system_name = "教务管理系统" #类属性
+    def __init__(self):
+        self.student_list=[]#列表，记录在校学生的成绩
+    #添加学生成绩
+    def add_student(self,student):
         
+
+    #修改学生成绩
+    #删除学生成绩
+    #查询指定学生成绩
+
