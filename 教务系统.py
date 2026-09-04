@@ -48,11 +48,29 @@ class EduManagement :
     system_name = "教务管理系统" #类属性
     def __init__(self):
         self.student_list=[]#列表，记录在校学生的成绩
-    #添加学生成绩
+    #添加学生
     def add_student(self,student):
-        
-
+        name = input("请输入学生姓名：")
+        for s in self.student_list:
+            if s.name == name:
+                print("该学生已添加！")
+                return
+        chinese = int(input("请输入语文成绩："))
+        math = int(input("请输入数学成绩："))
+        english = int(input("请输入英语成绩："))
+        if 0 <= chinese <=100 and 0 <= math <= 100 and 0<= english <=100:
+            stu = Student(name,chinese,math,english)
+            self.student_list.append(stu)
+        else:
+            print("成绩必须在0-100之间！")
     #修改学生成绩
+    def update_score(self,name,chinese=None,math=None,english=None):
+        for s in self.student_list:
+            if s.name == name:
+                print(s)
+                s.update_score(self,chinese,math,english)
+                return
+        print("未添加此学生！")
     #删除学生成绩
     #查询指定学生成绩
 
